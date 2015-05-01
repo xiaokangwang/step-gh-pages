@@ -55,7 +55,7 @@ git config user.name "werckerbot"
 
 git add .
 git commit -m "deploy from $WERCKER_STARTED_BY"
-result="$(git push -f $remote master:$branch)"
+result="$(git push -f https://$WERCKER_GH_PAGES_DO_NOT_USE_TOKEN@github.com/$repo.git master:$branch)"
 
 if [[ $? -ne 0 ]]
 then

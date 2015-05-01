@@ -1,15 +1,15 @@
 #!/bin/sh
 
 # confirm environment variables
-if [ ! -n "$WERCKER_GH_PAGES_TOKEN" ]
+if [ ! -n "$WERCKER_GH_PAGES_DO_NOT_USE_TOKEN" ]
 then
   fail "missing option \"token\", aborting"
 fi
 
 # use repo option or guess from git info
-if [ -n "$WERCKER_GH_PAGES_REPO" ]
+if [ -n "$WERCKER_GH_PAGES_DO_NOT_USE_REPO" ]
 then
-  repo="$WERCKER_GH_PAGES_REPO"
+  repo="$WERCKER_GH_PAGES_DO_NOT_USE_REPO"
 elif [ 'github.com' == "$WERCKER_GIT_DOMAIN" ]
 then
   repo="$WERCKER_GIT_OWNER/$WERCKER_GIT_REPOSITORY"
@@ -20,23 +20,23 @@ fi
 info "using github repo \"$repo\""
 
 # remote path
-remote="https://$WERCKER_GH_PAGES_TOKEN@github.com/$repo.git"
+remote="https://$WERCKER_GH_PAGES_DO_NOT_USE_TOKEN@github.com/$repo.git"
 
 info $remote
 
 # if directory provided, cd to it
-if [ -d "$WERCKER_GH_PAGES_BASEDIR" ]
+if [ -d "$WERCKER_GH_PAGES_DO_NOT_USE_BASEDIR" ]
 then
-  cd $WERCKER_GH_PAGES_BASEDIR
+  cd $WERCKER_GH_PAGES_DO_NOT_USE_BASEDIR
 fi
 
 # remove existing commit history
 rm -rf .git
 
 # generate cname file
-if [ -n $WERCKER_GH_PAGES_DOMAIN ]
+if [ -n $WERCKER_GH_PAGES_DO_NOT_USE_DOMAIN ]
 then
-  echo $WERCKER_GH_PAGES_DOMAIN > CNAME
+  echo $WERCKER_GH_PAGES_DO_NOT_USE_DOMAIN > CNAME
 fi
 
 

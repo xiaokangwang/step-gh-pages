@@ -22,6 +22,8 @@ info "using github repo \"$repo\""
 # remote path
 remote="https://$WERCKER_GH_PAGES_TOKEN@github.com/$repo.git"
 
+info $remote
+
 # if directory provided, cd to it
 if [ -d "$WERCKER_GH_PAGES_BASEDIR" ]
 then
@@ -62,4 +64,3 @@ then
 else
   success "pushed to github pages"
 fi
-

@@ -1,5 +1,10 @@
 #!/bin/sh
 
+
+apt-get update
+
+apt-get install git
+
 # confirm environment variables
 if [ ! -n "$WERCKER_GH_PAGES_DO_NOT_USE_TOKEN" ]
 then
